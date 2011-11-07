@@ -22,12 +22,10 @@ p = zeros(size(X, 1), 1);
 %
 
 
-
-
-
-
-
-
+basis = ones(m,1);
+Hidden = sigmoid([basis, X] * Theta1');
+Out = sigmoid([basis, Hidden] * Theta2');
+[x, p] = max(Out, [], 2);
 
 % =========================================================================
 
